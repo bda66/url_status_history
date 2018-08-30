@@ -1,24 +1,20 @@
-# README
+# UrlStatusHistory
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Тестовое задание
 
-Things you may want to cover:
+Система регистрации инцидентов на RoR.
 
-* Ruby version
+1. По расписанию опрашиваем URL (скажем раз в минуту). Смотрим только на статус ответа. 200 - все хорошо, любой другой плохо и считаем что сервер упал.
+2. В БД ведем историю инцидентов. У инцидента в бд видно когда сервер упал (дата начала инцидента), когда поднялся (дата окончания инцидента). Открытый инцидент может быть только один.
+3. Сделать JSON API с двумя endpoint. История инцидентов (скажем последние 10). Текущий статус (есть ли открытый инцидент).
+4. Как плюс - поддержка нескольких URL для проверки и соответственно в API текущий статус и история инцидентов для каждого из них.
+5. Как плюс - тесты (скажем на один публичный метод в модели и один контроллер).
 
-* System dependencies
+Технологии (желательно): БД Postgresql, Тесты Rspec, вьюхи Jbuilder.
 
-* Configuration
+Просмотр список хостов
+http://localhost:3000/hosts
 
-* Database creation
+Просмотр последних 10 историй хоста
+http://localhost:3000/hosts/id/status_history
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
